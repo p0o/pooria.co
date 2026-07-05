@@ -1,6 +1,5 @@
 # Pooria's writings
 
-
 ---
 
-Built with AstroPaper by [Sat Naing](https://satnaing.dev) 👨🏻‍💻 
+Built with AstroPaper by [Sat Naing](https://satnaing.dev) 👨🏻‍💻
