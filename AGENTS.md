@@ -8,6 +8,12 @@ astro dev --background
 
 Manage the background server with `astro dev stop`, `astro dev status`, and `astro dev logs`.
 
+## Posting 
+
+Use this example to understand how a post is formatted:
+
+[Sample post in Astro Paper](src/content/posts/adding-new-post.mdx)
+
 ## Documentation
 
 Full documentation: https://docs.astro.build

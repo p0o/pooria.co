@@ -2,19 +2,19 @@ import { defineAstroPaperConfig } from "./src/types/config";
 
 export default defineAstroPaperConfig({
   site: {
-    url: "https://astro-paper.pages.dev/",
-    title: "AstroPaper",
-    description: "A minimal, responsive and SEO-friendly Astro blog theme.",
-    author: "Sat Naing",
-    profile: "https://satna.ing",
-    ogImage: "default-og.jpg",
+    url: "https://pooria.co",
+    title: "",
+    description: "Pooria Atarzadeh's blog about cloud engineering, MLOps and system engineering",
+    author: "Pooria Atarzadeh",
+    profile: "https://github.com/p0o",
+    ogImage: "",
     lang: "en",
-    timezone: "Asia/Bangkok",
+    timezone: "Europe/Copenhagen",
     dir: "ltr",
   },
   posts: {
-    perPage: 4,
-    perIndex: 4,
+    perPage: 5,
+    perIndex: 5,
     scheduledPostMargin: 15 * 60 * 1000,
   },
   features: {
@@ -29,17 +29,12 @@ export default defineAstroPaperConfig({
     search: "pagefind",
   },
   socials: [
-    { name: "github",   url: "https://github.com/satnaing/astro-paper" },
-    { name: "x",        url: "https://x.com/username" },
-    { name: "linkedin", url: "https://www.linkedin.com/in/username/" },
-    { name: "mail",     url: "mailto:yourmail@gmail.com" },
+    { name: "github", url: "https://github.com/p0o" },
+    // { name: "x", url: "https://x.com/" },
+    { name: "linkedin", url: "https://www.linkedin.com/in/pooriaaz/" },
   ],
   shareLinks: [
-    { name: "whatsapp", url: "https://wa.me/?text=" },
-    { name: "facebook", url: "https://www.facebook.com/sharer.php?u=" },
-    { name: "x",        url: "https://x.com/intent/post?url=" },
-    { name: "telegram", url: "https://t.me/share/url?url=" },
-    { name: "pinterest", url: "https://pinterest.com/pin/create/button/?url=" },
-    { name: "mail",     url: "mailto:?subject=See%20this%20post&body=" },
+    { name: "linkedin", url: "https://www.linkedin.com/sharing/share-offsite/?url=" },
+    { name: "x", url: "https://x.com/intent/post?url=" },
   ],
 });

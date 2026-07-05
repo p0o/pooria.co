@@ -34,8 +34,8 @@ const homePath = getRelativeLocaleUrl(locale, "");
     class="app-layout"
   >
     <section id="hero" class="border-border border-b pt-8 pb-6">
-      <h1 class="my-4 inline-block text-4xl font-bold sm:my-8 sm:text-5xl">
-        Mingalaba
+      <h1 class="my-4 inline-block text-4xl font-bold sm:my-8 sm:text-2xl">
+        Pooria's Notes
       </h1>
       <a
         target="_blank"
@@ -53,20 +53,41 @@ const homePath = getRelativeLocaleUrl(locale, "");
       </a>
 
       <p>
-        AstroPaper is a minimal, responsive, accessible and SEO-friendly Astro
-        blog theme. This theme follows best practices and provides accessibility
-        out of the box. Light and dark mode are supported by default. Moreover,
-        additional color schemes can also be configured.
+        I'm an experienced infrastructure engineer based in Denmark. In this
+        place I write mostly about my interests in tech including cloud
+        engineering, MLOps and high-impact system engineering.
       </p>
       <p class="mt-2">
-        Read the blog posts or check
+        Follow me on
         <LinkButton
           class="hover:text-accent underline decoration-dashed underline-offset-4"
-          href="https://github.com/satnaing/astro-paper#readme"
+          href="https://www.linkedin.com/in/pooriaaz/"
         >
-          README
-        </LinkButton> for more info.
+          LinkedIn
+        </LinkButton> or put in your email to get these updates!
       </p>
+      <form
+        action="https://buttondown.com/api/emails/embed-subscribe/pooria"
+        method="post"
+        class="embeddable-buttondown-form mt-4 max-w-lg"
+      >
+        <label for="bd-email" class="sr-only">Enter your email</label>
+        <div class="flex flex-col gap-4 sm:flex-row">
+          <input
+            type="email"
+            name="email"
+            id="bd-email"
+            required
+            placeholder="you@protonmail.com (no AI slop, promise)"
+            class="border-border bg-background text-foreground placeholder:text-muted-foreground focus-visible:outline-accent w-full rounded-md border px-3 py-2 text-sm focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-dashed"
+          />
+          <input
+            type="submit"
+            value="Subscribe"
+            class="bg-accent text-accent-foreground focus-visible:outline-accent shrink-0 cursor-pointer rounded-md px-4 py-2 text-sm font-medium transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-dashed"
+          />
+        </div>
+      </form>
       {
         socials.length > 0 && (
           <div class="mt-4 flex max-sm:flex-col sm:items-center">
