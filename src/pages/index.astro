@@ -160,9 +160,9 @@ const homePath = getRelativeLocaleUrl(locale, "");
     }
 
     const subscribed = new URLSearchParams(window.location.search).get(
-      "subscribed"
+      "email_address"
     );
-    if (subscribed === "true") {
+    if (subscribed) {
       document.getElementById("bd-subscribe-form")?.classList.add("hidden");
       document
         .getElementById("bd-subscribe-thanks")
