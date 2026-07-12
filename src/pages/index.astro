@@ -67,6 +67,7 @@ const homePath = getRelativeLocaleUrl(locale, "");
         </LinkButton> or put in your email to get these updates!
       </p>
       <form
+        id="bd-subscribe-form"
         action="https://buttondown.com/api/emails/embed-subscribe/pooria.co"
         method="post"
         class="embeddable-buttondown-form mt-4 max-w-lg"
@@ -88,6 +89,9 @@ const homePath = getRelativeLocaleUrl(locale, "");
           />
         </div>
       </form>
+      <p id="bd-subscribe-thanks" class="mt-4 hidden max-w-lg font-medium">
+        Thanks for subscribing!
+      </p>
       {
         socials.length > 0 && (
           <div class="mt-4 flex max-sm:flex-col sm:items-center">
@@ -153,6 +157,16 @@ const homePath = getRelativeLocaleUrl(locale, "");
     const baseRoot = import.meta.env.BASE_URL.replace(/\/?$/, "/");
     if (indexLayout?.layout) {
       sessionStorage.setItem("backUrl", indexLayout.homePath ?? baseRoot);
+    }
+
+    const subscribed = new URLSearchParams(window.location.search).get(
+      "subscribed"
+    );
+    if (subscribed === "true") {
+      document.getElementById("bd-subscribe-form")?.classList.add("hidden");
+      document
+        .getElementById("bd-subscribe-thanks")
+        ?.classList.remove("hidden");
     }
   });
 </script>
