@@ -45,8 +45,7 @@ Source code in Github: [https://github.com/p0o/run-models-in-aws-inf2-ml-acceler
 
 ## 1. Pre-requisite
 
-AWS offers its GPU and ML accelerator resources through EC2 instances belonging to a specific family. Accelerator instances optimized for training are called `Trainium` family and instanced optimized for inference are called `Inferentia`.
-Both of these instances are not by default enabled for you to use, they have a quota of 0 which it means you can run them.
+AWS offers its GPU and ML accelerator resources through EC2 instances belonging to a specific family. Instances optimized for training are called `Trainium` and instanced optimized for inference are called `Inferentia`. Both of these instance families are not by default enabled for you to use, they have a quota of 0 which means you can NOT use them!
 
 Run this command (adjust the region) to check if you have any quota available:
 
@@ -58,7 +57,9 @@ aws service-quotas get-service-quota \
   --query 'Quota.{Name:QuotaName,Limit:Value}' --output table
 ```
 
-You need at least 4 vCPUs to follow this tutorial. If you get 0, it means you need to first request an increase of quota from the page below. Depending on the region and the request size, it might immediately be accepted or take more than a day to be reviewed by AWS customer support.
+You need at least 4 vCPUs to follow this tutorial. If you get 0, it means you need to first request an increase of quota from the page below. Depending on the region and the request size, it might immediately be accepted or take more than a day to be reviewed by AWS customer team!
+
+![hungry cat meme](https://media1.tenor.com/m/ShDlvYkSEjcAAAAd/cat-funny.gif)
 
 [Link to increase quota](http://aws.amazon.com/contact-us/ec2-request)
 
