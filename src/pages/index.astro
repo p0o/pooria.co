@@ -82,11 +82,34 @@ const homePath = getRelativeLocaleUrl(locale, "");
             placeholder="you@protonmail.com (no AI slop, promise)"
             class="border-border bg-background text-foreground placeholder:text-muted-foreground focus-visible:outline-accent w-full rounded-md border px-3 py-2 text-sm focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-dashed"
           />
-          <input
+          <button
             type="submit"
-            value="Subscribe"
-            class="bg-accent text-accent-foreground focus-visible:outline-accent shrink-0 cursor-pointer rounded-md px-4 py-2 text-sm font-medium transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-dashed"
-          />
+            id="bd-subscribe-submit"
+            class="bg-accent text-accent-foreground focus-visible:outline-accent flex shrink-0 cursor-pointer items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-dashed disabled:cursor-not-allowed disabled:opacity-70"
+          >
+            <svg
+              id="bd-subscribe-spinner"
+              class="hidden h-4 w-4 animate-spin"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <circle
+                class="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                stroke-width="4"
+              ></circle>
+              <path
+                class="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 0 1 8-8V0C5.373 0 0 5.373 0 12h4Z"
+              ></path>
+            </svg>
+            <span id="bd-subscribe-label">Subscribe</span>
+          </button>
         </div>
       </form>
       <p id="bd-subscribe-thanks" class="mt-4 hidden max-w-lg font-medium">
@@ -168,5 +191,19 @@ const homePath = getRelativeLocaleUrl(locale, "");
         .getElementById("bd-subscribe-thanks")
         ?.classList.remove("hidden");
     }
+
+    document
+      .getElementById("bd-subscribe-form")
+      ?.addEventListener("submit", () => {
+        const submitBtn = document.getElementById(
+          "bd-subscribe-submit"
+        ) as HTMLButtonElement | null;
+        submitBtn?.setAttribute("disabled", "true");
+        document
+          .getElementById("bd-subscribe-spinner")
+          ?.classList.remove("hidden");
+        const label = document.getElementById("bd-subscribe-label");
+        if (label) label.textContent = "Subscribing…";
+      });
   });
 </script>
