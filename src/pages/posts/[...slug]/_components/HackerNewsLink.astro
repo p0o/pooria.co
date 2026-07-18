@@ -1,0 +1,22 @@
+---
+import LinkButton from "@/components/LinkButton.astro";
+
+type Props = {
+  hackernewsURL?: string;
+};
+
+const { hackernewsURL } = Astro.props;
+---
+
+{
+  hackernewsURL && (
+    <LinkButton
+      href={hackernewsURL}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="border-border hover:border-accent inline-block rounded-md border px-3 py-1.5 text-sm"
+    >
+      Discuss on Hacker News
+    </LinkButton>
+  )
+}

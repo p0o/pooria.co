@@ -11,6 +11,7 @@ import { slugifyStr } from "@/utils/slugify";
 import { toTransitionName } from "@/utils/toTransitionName";
 import EditPost from "./_components/EditPost.astro";
 import ShareLinks from "./_components/ShareLinks.astro";
+import HackerNewsLink from "./_components/HackerNewsLink.astro";
 import BackButton from "./_components/BackButton.astro";
 import BackToTopButton from "./_components/BackToTopButton.astro";
 import AdjacentPostNav from "./_components/AdjacentPostNav.astro";
@@ -69,6 +70,7 @@ const {
   timezone,
   tags,
   hideEditPost,
+  hackernewsURL,
 } = post.data;
 
 const { Content } = await render(post);
@@ -154,6 +156,8 @@ const ogImage = ogImageUrl
     </ul>
 
     <ShareLinks />
+
+    <HackerNewsLink {hackernewsURL} />
 
     <hr class="my-8 border-dashed" />
 
